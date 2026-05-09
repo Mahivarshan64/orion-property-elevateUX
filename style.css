@@ -1116,7 +1116,7 @@ select option { background: var(--black-3); color: var(--white); }
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
-    overflow-y: auto;
+    overflow: hidden;
   }
   .nav-links.open { transform: translateX(0); }
   .nav-links li { width: 100%; }
