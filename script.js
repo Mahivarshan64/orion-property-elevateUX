@@ -6,14 +6,8 @@
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
-  // Create overlay for mobile menu
-  const overlay = document.createElement('div');
-  overlay.className = 'nav-overlay';
-  document.body.appendChild(overlay);
-
   function openMenu() {
     navLinks.classList.add('open');
-    overlay.classList.add('visible');
     hamburger.classList.add('active');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -21,7 +15,6 @@
 
   function closeMenu() {
     navLinks.classList.remove('open');
-    overlay.classList.remove('visible');
     hamburger.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
@@ -31,8 +24,6 @@
     const isOpen = navLinks.classList.contains('open');
     isOpen ? closeMenu() : openMenu();
   });
-
-  overlay.addEventListener('click', closeMenu);
 
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
